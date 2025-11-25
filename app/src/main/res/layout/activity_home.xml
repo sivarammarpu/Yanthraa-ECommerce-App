@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
+        android:background="@drawable/toolbar_gradient"
         android:elevation="4dp"
         app:title="@string/app_name"
         app:titleTextColor="@color/white"
