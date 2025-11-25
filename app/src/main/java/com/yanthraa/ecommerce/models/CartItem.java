@@ -30,6 +30,6 @@ public class CartItem {
     }
 
     public String getFormattedItemTotal() {
-        return String.format("$%.2f", getItemTotal());
+        return String.format("₹%.0f", getItemTotal());
     }
 }

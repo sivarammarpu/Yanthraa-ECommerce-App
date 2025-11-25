@@ -1,5 +1,12 @@
 # Yanthraa E-Commerce Android App
 
+> **Author**: [Your Name]  
+> **Copyright**: © 2025 [Your Name]. All rights reserved.  
+> **License**: MIT License  
+> **Development**: Independently developed Android e-commerce application
+
+---
+
 A polished, production-quality Android e-commerce application built with Java, featuring a modern UI, smooth navigation, and complete shopping cart functionality.
 
 ## Features

@@ -4,23 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/card_margin"
-    android:clickable="true"
-    android:focusable="true"
-    app:cardCornerRadius="@dimen/card_corner_radius"
-    app:cardElevation="@dimen/card_elevation"
-    app:cardBackgroundColor="@color/card_background"
-    app:rippleColor="@color/primary_light">
+    android:layout_margin="@dimen/spacing_small"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/surface"
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/product_card_padding">
+        android:padding="@dimen/padding_small">
 
         <ImageView
             android:id="@+id/productImage"
             android:layout_width="0dp"
-            android:layout_height="@dimen/product_image_height"
+            android:layout_height="160dp"
             android:scaleType="centerCrop"
             android:contentDescription="@string/product_image"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,26 +28,25 @@
 
         <ImageButton
             android:id="@+id/favoriteButton"
-            android:layout_width="@dimen/icon_size_large"
-            android:layout_height="@dimen/icon_size_large"
-            android:background="@android:color/white"
-            android:padding="@dimen/spacing_tiny"
-            android:contentDescription="@string/favorite"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="@dimen/spacing_tiny"
+            android:background="@drawable/badge_background"
             android:src="@drawable/ic_favorite_border"
-            app:tint="@color/accent"
+            android:contentDescription="@string/favorite"
+            app:tint="@color/error"
             app:layout_constraintTop_toTopOf="@id/productImage"
-            app:layout_constraintEnd_toEndOf="@id/productImage"
-            android:layout_margin="@dimen/spacing_small" />
+            app:layout_constraintEnd_toEndOf="@id/productImage" />
 
         <TextView
             android:id="@+id/productName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
-            android:textAppearance="@style/TextAppearance.Yanthraa.Title"
-            android:textSize="@dimen/text_size_body"
             android:maxLines="2"
             android:ellipsize="end"
+            android:textAppearance="@style/TextAppearance.Yanthraa.Title"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/productImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,21 +61,22 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/productName"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="$99.99" />
+            tools:text="₹16,599" />
 
         <RatingBar
             android:id="@+id/productRating"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tiny"
             android:numStars="5"
             android:stepSize="0.1"
             android:isIndicator="true"
             android:progressTint="@color/star_filled"
             android:secondaryProgressTint="@color/star_empty"
-            app:layout_constraintTop_toTopOf="@id/productPrice"
-            app:layout_constraintBottom_toBottomOf="@id/productPrice"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:rating="4.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

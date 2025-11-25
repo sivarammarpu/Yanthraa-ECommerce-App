@@ -94,6 +94,6 @@ public class Product implements Serializable {
     }
 
     public String getFormattedPrice() {
-        return String.format("$%.2f", price);
+        return String.format("₹%.0f", price);
     }
 }

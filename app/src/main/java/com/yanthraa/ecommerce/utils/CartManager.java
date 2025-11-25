@@ -78,15 +78,15 @@ public class CartManager {
     }
 
     public String getFormattedSubtotal() {
-        return String.format("$%.2f", getSubtotal());
+        return String.format("₹%.0f", getSubtotal());
     }
 
     public String getFormattedTax() {
-        return String.format("$%.2f", getTax());
+        return String.format("₹%.0f", getTax());
     }
 
     public String getFormattedTotal() {
-        return String.format("$%.2f", getTotal());
+        return String.format("₹%.0f", getTotal());
     }
 
     public void clearCart() {
