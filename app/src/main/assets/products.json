@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Wireless Headphones",
+    "description": "Premium wireless headphones with active noise cancellation, 30-hour battery life, and superior sound quality. Perfect for music lovers and professionals who demand the best audio experience.",
+    "price": 199.99,
+    "rating": 4.5,
+    "imageUrl": "product_headphones",
+    "category": "Electronics"
+  },
+  {
+    "id": "2",
+    "name": "Smart Watch Pro",
+    "description": "Advanced fitness tracking smartwatch with heart rate monitor, GPS, sleep tracking, and 7-day battery life. Stay connected and healthy with this cutting-edge wearable technology.",
+    "price": 299.99,
+    "rating": 4.8,
+    "imageUrl": "product_smartwatch",
+    "category": "Electronics"
+  },
+  {
+    "id": "3",
+    "name": "Designer Handbag",
+    "description": "Elegant leather handbag with premium craftsmanship. Features multiple compartments, adjustable strap, and timeless design that complements any outfit.",
+    "price": 159.99,
+    "rating": 4.6,
+    "imageUrl": "product_handbag",
+    "category": "Fashion"
+  },
+  {
+    "id": "4",
+    "name": "Running Shoes",
+    "description": "Lightweight performance running shoes with responsive cushioning and breathable mesh upper. Engineered for comfort and speed on every run.",
+    "price": 129.99,
+    "rating": 4.7,
+    "imageUrl": "product_shoes",
+    "category": "Fashion"
+  },
+  {
+    "id": "5",
+    "name": "Aromatherapy Diffuser",
+    "description": "Ultrasonic essential oil diffuser with LED mood lighting. Creates a relaxing atmosphere while purifying the air in your home or office.",
+    "price": 49.99,
+    "rating": 4.4,
+    "imageUrl": "product_diffuser",
+    "category": "Home"
+  },
+  {
+    "id": "6",
+    "name": "Coffee Maker",
+    "description": "Programmable coffee maker with thermal carafe, brew strength control, and auto-shutoff. Wake up to freshly brewed coffee every morning.",
+    "price": 89.99,
+    "rating": 4.5,
+    "imageUrl": "product_coffee",
+    "category": "Home"
+  },
+  {
+    "id": "7",
+    "name": "Skincare Set",
+    "description": "Complete 5-piece skincare routine with cleanser, toner, serum, moisturizer, and eye cream. Formulated with natural ingredients for radiant, healthy skin.",
+    "price": 79.99,
+    "rating": 4.9,
+    "imageUrl": "product_skincare",
+    "category": "Beauty"
+  },
+  {
+    "id": "8",
+    "name": "Hair Styling Tool",
+    "description": "Professional-grade hair straightener and curler with ceramic plates and adjustable temperature settings. Achieve salon-quality results at home.",
+    "price": 119.99,
+    "rating": 4.6,
+    "imageUrl": "product_hairstyler",
+    "category": "Beauty"
+  }
+]

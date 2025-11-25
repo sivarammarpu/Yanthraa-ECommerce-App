@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yanthraa</string>
+    
+    <!-- Home Screen -->
+    <string name="search_hint">Search products…</string>
+    <string name="cart">Cart</string>
+    <string name="categories">Categories</string>
+    
+    <!-- Categories -->
+    <string name="category_all">All</string>
+    <string name="category_electronics">Electronics</string>
+    <string name="category_fashion">Fashion</string>
+    <string name="category_home">Home</string>
+    <string name="category_beauty">Beauty</string>
+    
+    <!-- Product Details -->
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="quantity">Quantity</string>
+    <string name="description">Description</string>
+    <string name="rating">Rating</string>
+    
+    <!-- Cart -->
+    <string name="my_cart">My Cart</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Tax (8%)</string>
+    <string name="total">Total</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+    <string name="empty_cart">Your cart is empty</string>
+    <string name="empty_cart_message">Add some products to get started!</string>
+    <string name="remove">Remove</string>
+    
+    <!-- Messages -->
+    <string name="added_to_cart">Added to cart!</string>
+    <string name="removed_from_cart">Removed from cart</string>
+    
+    <!-- Accessibility -->
+    <string name="product_image">Product image</string>
+    <string name="favorite">Favorite</string>
+    <string name="increment_quantity">Increase quantity</string>
+    <string name="decrement_quantity">Decrease quantity</string>
+</resources>
