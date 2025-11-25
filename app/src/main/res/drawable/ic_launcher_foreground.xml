@@ -6,7 +6,7 @@
     
     <!-- Background gradient -->
     <path
-        android:fillColor="#6C63FF"
+        android:fillColor="#A855F7"
         android:pathData="M0,0h108v108h-108z"/>
     
     <!-- Shopping bag icon -->
@@ -20,9 +20,10 @@
     
     <!-- Y letter -->
     <path
-        android:fillColor="#FF6584"
+        android:fillColor="#EC4899"
         android:pathData="M51,50l-3,6v8h4v-8l3,-6h-4z"/>
     <path
-        android:fillColor="#FF6584"
+        android:fillColor="#EC4899"
         android:pathData="M57,50l-3,6h4l3,-6h-4z"/>
 </vector>
+
