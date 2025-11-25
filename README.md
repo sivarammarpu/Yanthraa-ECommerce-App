@@ -1,7 +1,7 @@
 # Yanthraa E-Commerce Android App
 
-> **Author**: [Your Name]  
-> **Copyright**: © 2025 [Your Name]. All rights reserved.  
+> **Author**: Sivaram Marpu  
+> **Copyright**: © 2025 Sivaram Marpu. All rights reserved.  
 > **License**: MIT License  
 > **Development**: Independently developed Android e-commerce application
 
