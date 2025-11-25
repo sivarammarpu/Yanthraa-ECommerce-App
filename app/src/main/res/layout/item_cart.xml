@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_small"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardBackgroundColor="@color/card_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_medium">
+
+        <ImageView
+            android:id="@+id/cartItemImage"
+            android:layout_width="@dimen/cart_item_image_size"
+            android:layout_height="@dimen/cart_item_image_size"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/product_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/cartItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:textAppearance="@style/TextAppearance.Yanthraa.Title"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="@id/cartItemImage"
+            app:layout_constraintStart_toEndOf="@id/cartItemImage"
+            app:layout_constraintEnd_toStartOf="@id/removeButton"
+            tools:text="Product Name" />
+
+        <TextView
+            android:id="@+id/cartItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:textAppearance="@style/TextAppearance.Yanthraa.Price"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/cartItemName"
+            app:layout_constraintStart_toEndOf="@id/cartItemImage"
+            tools:text="$99.99" />
+
+        <TextView
+            android:id="@+id/cartItemQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:textAppearance="@style/TextAppearance.Yanthraa.Body"
+            app:layout_constraintTop_toBottomOf="@id/cartItemPrice"
+            app:layout_constraintStart_toEndOf="@id/cartItemImage"
+            tools:text="Qty: 2" />
+
+        <TextView
+            android:id="@+id/cartItemTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:textAppearance="@style/TextAppearance.Yanthraa.Title"
+            android:textColor="@color/primary"
+            app:layout_constraintBottom_toBottomOf="@id/cartItemImage"
+            app:layout_constraintStart_toEndOf="@id/cartItemImage"
+            tools:text="$199.98" />
+
+        <ImageButton
+            android:id="@+id/removeButton"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_large"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete"
+            android:contentDescription="@string/remove"
+            app:tint="@color/error"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
