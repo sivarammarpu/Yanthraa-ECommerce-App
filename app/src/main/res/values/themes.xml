@@ -38,7 +38,7 @@
     
     <!-- Chip Styles -->
     <style name="Widget.Yanthraa.Chip" parent="Widget.Material3.Chip.Filter">
-        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="chipBackgroundColor">@color/chip_background_selector</item>
         <item name="chipStrokeWidth">0dp</item>
         <item name="android:textColor">@color/text_primary</item>
         <item name="checkedIconVisible">false</item>

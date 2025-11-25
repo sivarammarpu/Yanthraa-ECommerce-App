@@ -27,8 +27,6 @@ public class HomeActivity extends AppCompatActivity implements
     private RecyclerView productsRecyclerView;
     private ProductAdapter productAdapter;
     private ChipGroup categoryChipGroup;
-    private TextView cartBadge;
-    private FrameLayout cartIconContainer;
     private CartManager cartManager;
     private List<Product> products;
 
@@ -40,7 +38,6 @@ public class HomeActivity extends AppCompatActivity implements
         initViews();
         setupRecyclerView();
         setupCategoryChips();
-        setupCartIcon();
         loadProducts();
     }
 
@@ -48,10 +45,28 @@ public class HomeActivity extends AppCompatActivity implements
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         productsRecyclerView = findViewById(R.id.productsRecyclerView);
         categoryChipGroup = findViewById(R.id.categoryChipGroup);
-        cartBadge = findViewById(R.id.cartBadge);
-        cartIconContainer = findViewById(R.id.cartIconContainer);
         
         cartManager = CartManager.getInstance();
+        
+        setupSearch();
+    }
+
+    private void setupSearch() {
+        android.widget.EditText searchEditText = findViewById(R.id.searchEditText);
+        searchEditText.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (productAdapter != null) {
+                    productAdapter.filter(s.toString());
+                }
+            }
+
+            @Override
+            public void afterTextChanged(android.text.Editable s) {}
+        });
     }
 
     private void setupRecyclerView() {
@@ -73,29 +88,9 @@ public class HomeActivity extends AppCompatActivity implements
         });
     }
 
-    private void setupCartIcon() {
-        cartIconContainer.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        });
-        
-        updateCartBadge();
-    }
-
     private void loadProducts() {
         products = ProductDataLoader.loadProducts(this);
         productAdapter.setProducts(products);
-    }
-
-    private void updateCartBadge() {
-        int itemCount = cartManager.getCartItemCount();
-        if (itemCount > 0) {
-            cartBadge.setText(String.valueOf(itemCount));
-            cartBadge.setVisibility(View.VISIBLE);
-        } else {
-            cartBadge.setVisibility(View.GONE);
-        }
     }
 
     @Override
@@ -113,14 +108,13 @@ public class HomeActivity extends AppCompatActivity implements
 
     @Override
     public void onCartUpdated() {
-        updateCartBadge();
+        // Cart updated - no UI update needed since cart icon removed
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         cartManager.addListener(this);
-        updateCartBadge();
     }
 
     @Override

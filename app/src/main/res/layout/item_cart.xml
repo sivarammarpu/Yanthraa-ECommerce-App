@@ -65,11 +65,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_tiny"
             android:textAppearance="@style/TextAppearance.Yanthraa.Title"
             android:textColor="@color/primary"
-            app:layout_constraintBottom_toBottomOf="@id/cartItemImage"
+            app:layout_constraintTop_toBottomOf="@id/cartItemQuantity"
             app:layout_constraintStart_toEndOf="@id/cartItemImage"
-            tools:text="$199.98" />
+            tools:text="₹16,599" />
 
         <ImageButton
             android:id="@+id/removeButton"

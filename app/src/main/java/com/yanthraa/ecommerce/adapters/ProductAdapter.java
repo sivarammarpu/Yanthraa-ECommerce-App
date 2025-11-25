@@ -55,6 +55,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         notifyDataSetChanged();
     }
 
+    public void filter(String query) {
+        if (query == null || query.trim().isEmpty()) {
+            productsFiltered = new ArrayList<>(products);
+        } else {
+            productsFiltered = new ArrayList<>();
+            String lowerCaseQuery = query.toLowerCase().trim();
+            for (Product product : products) {
+                if (product.getName().toLowerCase().contains(lowerCaseQuery)) {
+                    productsFiltered.add(product);
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -79,7 +94,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         TextView productName;
         TextView productPrice;
         RatingBar productRating;
-        ImageButton favoriteButton;
 
         ProductViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,7 +101,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             productName = itemView.findViewById(R.id.productName);
             productPrice = itemView.findViewById(R.id.productPrice);
             productRating = itemView.findViewById(R.id.productRating);
-            favoriteButton = itemView.findViewById(R.id.favoriteButton);
         }
 
         void bind(Product product) {
@@ -110,23 +123,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 productImage.setImageResource(R.color.surface_variant);
             }
 
-            // Set favorite icon
-            favoriteButton.setImageResource(product.isFavorite() ? 
-                    R.drawable.ic_favorite : R.drawable.ic_favorite_border);
-
             // Click listeners
             itemView.setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onProductClick(product);
-                }
-            });
-
-            favoriteButton.setOnClickListener(v -> {
-                product.setFavorite(!product.isFavorite());
-                favoriteButton.setImageResource(product.isFavorite() ? 
-                        R.drawable.ic_favorite : R.drawable.ic_favorite_border);
-                if (listener != null) {
-                    listener.onFavoriteClick(product);
                 }
             });
         }
