@@ -115,9 +115,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
         addToCartButton.setOnClickListener(v -> {
             cartManager.addToCart(product, quantity);
             Toast.makeText(this, "Item added to cart.", Toast.LENGTH_SHORT).show();
-
-            // Optional: Navigate to cart or back to home
-            // finish();
         });
     }
 
