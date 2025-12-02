@@ -64,7 +64,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     private void loadProductData() {
         product = (Product) getIntent().getSerializableExtra("product");
-        
+
         if (product != null) {
             productName.setText(product.getName());
             productPrice.setText(product.getFormattedPrice());
@@ -75,7 +75,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             // Load hero image
             int imageResId = getResources().getIdentifier(
                     product.getImageUrl(), "drawable", getPackageName());
-            
+
             if (imageResId != 0) {
                 Glide.with(this)
                         .load(imageResId)
@@ -114,9 +114,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private void setupAddToCart() {
         addToCartButton.setOnClickListener(v -> {
             cartManager.addToCart(product, quantity);
-            Toast.makeText(this, getString(R.string.added_to_cart), 
-                    Toast.LENGTH_SHORT).show();
-            
+            Toast.makeText(this, "Item added to cart.", Toast.LENGTH_SHORT).show();
+
             // Optional: Navigate to cart or back to home
             // finish();
         });

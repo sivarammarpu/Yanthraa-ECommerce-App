@@ -21,7 +21,7 @@ import com.yanthraa.ecommerce.utils.ProductDataLoader;
 
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements 
+public class HomeActivity extends AppCompatActivity implements
         ProductAdapter.OnProductClickListener, CartManager.CartUpdateListener {
 
     private RecyclerView productsRecyclerView;
@@ -41,13 +41,31 @@ public class HomeActivity extends AppCompatActivity implements
         loadProducts();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        if (item.getItemId() == R.id.action_cart) {
+            startActivity(new Intent(this, CartActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void initViews() {
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         productsRecyclerView = findViewById(R.id.productsRecyclerView);
         categoryChipGroup = findViewById(R.id.categoryChipGroup);
-        
+
         cartManager = CartManager.getInstance();
-        
+
         setupSearch();
     }
 
@@ -55,7 +73,8 @@ public class HomeActivity extends AppCompatActivity implements
         android.widget.EditText searchEditText = findViewById(R.id.searchEditText);
         searchEditText.addTextChangedListener(new android.text.TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -65,7 +84,8 @@ public class HomeActivity extends AppCompatActivity implements
             }
 
             @Override
-            public void afterTextChanged(android.text.Editable s) {}
+            public void afterTextChanged(android.text.Editable s) {
+            }
         });
     }
 
